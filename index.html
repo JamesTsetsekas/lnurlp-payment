@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LNURLP Payment - Lightning Network</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/qrcode@1.5.3/build/qrcode.min.js" onerror="console.warn('Primary QRCode CDN failed to load')"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>⚡ Lightning Payment</h1>
+            <p class="subtitle">Scan with your Lightning wallet to pay</p>
+            <p class="info-text">Choose amount 50-100 sats in your wallet</p>
+            
+            <div class="info-section">
+                <div class="info-item">
+                    <span class="label">LNURLP Address:</span>
+                    <span class="value" id="lnurlAddress">btcpayservertest@btc.jamestsetsekas.com</span>
+                </div>
+            </div>
+
+            <div class="qr-section">
+                <div class="qr-container">
+                    <canvas id="qrCode"></canvas>
+                </div>
+                <p class="qr-hint">Scan this QR code with your Lightning wallet</p>
+            </div>
+
+            <div class="details-section">
+                <div class="info-row">
+                    <span class="label">Amount Range:</span>
+                    <span class="value" id="amountRange">50 - 100 sats</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">LNURLP URL:</span>
+                    <div class="url-display" id="lnurlUrl">-</div>
+                </div>
+            </div>
+
+            <div id="errorSection" class="error-section hidden">
+                <p id="errorMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
